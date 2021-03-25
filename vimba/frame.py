@@ -460,7 +460,7 @@ class AncillaryData:
         return self.__feats
 
     @RaiseIfOutsideContext()
-    @RuntimeTypeCheckEnable()
+    #@RuntimeTypeCheckEnable()
     def get_features_by_type(self, feat_type: FeatureTypeTypes) -> FeaturesTuple:
         """Get all features in ancillary data of a specific type.
 
@@ -480,7 +480,7 @@ class AncillaryData:
         return filter_features_by_type(self.__feats, feat_type)
 
     @RaiseIfOutsideContext()
-    @RuntimeTypeCheckEnable()
+    #@RuntimeTypeCheckEnable()
     def get_features_by_category(self, category: str) -> FeaturesTuple:
         """Get all features in ancillary data of a specific category.
 
@@ -497,7 +497,7 @@ class AncillaryData:
         return filter_features_by_category(self.__feats, category)
 
     @RaiseIfOutsideContext()
-    @RuntimeTypeCheckEnable()
+    #@RuntimeTypeCheckEnable()
     def get_feature_by_name(self, feat_name: str) -> FeatureTypes:
         """Get a features in ancillary data by its name.
 
@@ -726,7 +726,7 @@ class Frame:
 
         return self._frame.timestamp
 
-    @RuntimeTypeCheckEnable()
+    #@RuntimeTypeCheckEnable()
     def convert_pixel_format(self, target_fmt: PixelFormat,
                              debayer_mode: Optional[Debayer] = None):
         """Convert internal pixel format to given format.
@@ -875,7 +875,7 @@ class Frame:
 
 
 @TraceEnable()
-@RuntimeTypeCheckEnable()
+#@RuntimeTypeCheckEnable()
 def intersect_pixel_formats(fmts1: FormatTuple, fmts2: FormatTuple) -> FormatTuple:
     """Build intersection of two sets containing PixelFormat.
 

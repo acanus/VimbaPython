@@ -228,7 +228,7 @@ class _BaseFeature:
         _, w = self.get_access_mode()
         return w
 
-    @RuntimeTypeCheckEnable()
+    #@RuntimeTypeCheckEnable()
     def register_change_handler(self, handler: ChangeHandler):
         """Register Callable on the Feature.
 
@@ -259,7 +259,7 @@ class _BaseFeature:
                 self.__unregister_callback()
                 self.__handlers.clear()
 
-    @RuntimeTypeCheckEnable()
+    #@RuntimeTypeCheckEnable()
     def unregister_change_handler(self, handler: ChangeHandler):
         """Remove registered Callable from the Feature.
 

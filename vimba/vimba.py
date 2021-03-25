@@ -97,7 +97,7 @@ class Vimba:
             return msg.format(VIMBA_PYTHON_VERSION, VIMBA_C_VERSION, VIMBA_IMAGE_TRANSFORM_VERSION)
 
         @RaiseIfInsideContext()
-        @RuntimeTypeCheckEnable()
+        ##@RuntimeTypeCheckEnable()
         def set_network_discovery(self, enable: bool):
             """Enable/Disable network camera discovery.
 
@@ -112,7 +112,7 @@ class Vimba:
             """
             self.__nw_discover = enable
 
-        @RuntimeTypeCheckEnable()
+        #@RuntimeTypeCheckEnable()
         def enable_log(self, config: LogConfig):
             """Enable VimbaPython's logging mechanism.
 
@@ -130,7 +130,7 @@ class Vimba:
 
         @TraceEnable()
         @RaiseIfOutsideContext()
-        @RuntimeTypeCheckEnable()
+        #@RuntimeTypeCheckEnable()
         def read_memory(self, addr: int, max_bytes: int) -> bytes:  # coverage: skip
             """Read a byte sequence from a given memory address.
 
@@ -153,7 +153,7 @@ class Vimba:
 
         @TraceEnable()
         @RaiseIfOutsideContext()
-        @RuntimeTypeCheckEnable()
+        #@RuntimeTypeCheckEnable()
         def write_memory(self, addr: int, data: bytes):  # coverage: skip
             """ Write a byte sequence to a given memory address.
 
@@ -171,7 +171,7 @@ class Vimba:
 
         @TraceEnable()
         @RaiseIfOutsideContext()
-        @RuntimeTypeCheckEnable()
+        #@RuntimeTypeCheckEnable()
         def read_registers(self, addrs: Tuple[int, ...]) -> Dict[int, int]:  # coverage: skip
             """Read contents of multiple registers.
 
@@ -192,7 +192,7 @@ class Vimba:
 
         @TraceEnable()
         @RaiseIfOutsideContext()
-        @RuntimeTypeCheckEnable()
+        #@RuntimeTypeCheckEnable()
         def write_registers(self, addrs_values: Dict[int, int]):  # coverage: skip
             """Write data to multiple Registers.
 
@@ -222,7 +222,7 @@ class Vimba:
                 return tuple(self.__inters)
 
         @RaiseIfOutsideContext()
-        @RuntimeTypeCheckEnable()
+        #@RuntimeTypeCheckEnable()
         def get_interface_by_id(self, id_: str) -> Interface:
             """Lookup Interface with given ID.
 
@@ -259,7 +259,7 @@ class Vimba:
                 return tuple(self.__cams)
 
         @RaiseIfOutsideContext()
-        @RuntimeTypeCheckEnable()
+        #@RuntimeTypeCheckEnable()
         def get_camera_by_id(self, id_: str) -> Camera:
             """Lookup Camera with given ID.
 
@@ -310,7 +310,7 @@ class Vimba:
 
         @TraceEnable()
         @RaiseIfOutsideContext()
-        @RuntimeTypeCheckEnable()
+        #@RuntimeTypeCheckEnable()
         def get_features_affected_by(self, feat: FeatureTypes) -> FeaturesTuple:
             """Get all system features affected by a specific system feature.
 
@@ -329,7 +329,7 @@ class Vimba:
 
         @TraceEnable()
         @RaiseIfOutsideContext()
-        @RuntimeTypeCheckEnable()
+        #@RuntimeTypeCheckEnable()
         def get_features_selected_by(self, feat: FeatureTypes) -> FeaturesTuple:
             """Get all system features selected by a specific system feature.
 
@@ -347,7 +347,7 @@ class Vimba:
             return filter_selected_features(self.__feats, feat)
 
         @RaiseIfOutsideContext()
-        @RuntimeTypeCheckEnable()
+        #@RuntimeTypeCheckEnable()
         def get_features_by_type(self, feat_type: FeatureTypeTypes) -> FeaturesTuple:
             """Get all system features of a specific feature type.
 
@@ -367,7 +367,7 @@ class Vimba:
             return filter_features_by_type(self.__feats, feat_type)
 
         @RaiseIfOutsideContext()
-        @RuntimeTypeCheckEnable()
+        #@RuntimeTypeCheckEnable()
         def get_features_by_category(self, category: str) -> FeaturesTuple:
             """Get all system features of a specific category.
 
@@ -384,7 +384,7 @@ class Vimba:
             return filter_features_by_category(self.__feats, category)
 
         @RaiseIfOutsideContext()
-        @RuntimeTypeCheckEnable()
+        #@RuntimeTypeCheckEnable()
         def get_feature_by_name(self, feat_name: str) -> FeatureTypes:
             """Get a system feature by its name.
 
@@ -406,7 +406,7 @@ class Vimba:
 
             return feat
 
-        @RuntimeTypeCheckEnable()
+        #@RuntimeTypeCheckEnable()
         def register_camera_change_handler(self, handler: CameraChangeHandler):
             """Add Callable what is executed on camera connect/disconnect
 
@@ -426,7 +426,7 @@ class Vimba:
                 if self.__cams_handlers:
                     self.__cams_handlers.clear()
 
-        @RuntimeTypeCheckEnable()
+        #@RuntimeTypeCheckEnable()
         def unregister_camera_change_handler(self, handler: CameraChangeHandler):
             """Remove previously registered camera change handler
 
@@ -440,7 +440,7 @@ class Vimba:
                 if handler in self.__cams_handlers:
                     self.__cams_handlers.remove(handler)
 
-        @RuntimeTypeCheckEnable()
+        #@RuntimeTypeCheckEnable()
         def register_interface_change_handler(self, handler: InterfaceChangeHandler):
             """Add Callable what is executed on interface connect/disconnect
 
@@ -460,7 +460,7 @@ class Vimba:
                 if self.__inters_handlers:
                     self.__inters_handlers.clear()
 
-        @RuntimeTypeCheckEnable()
+        #@RuntimeTypeCheckEnable()
         def unregister_interface_change_handler(self, handler: InterfaceChangeHandler):
             """Remove previously registered interface change handler
 

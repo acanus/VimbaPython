@@ -372,7 +372,7 @@ class Camera:
         return 'Camera(id={})'.format(self.get_id())
 
     @RaiseIfInsideContext()
-    @RuntimeTypeCheckEnable()
+    #@RuntimeTypeCheckEnable()
     def set_access_mode(self, access_mode: AccessMode):
         """Set camera access mode.
 
@@ -421,7 +421,7 @@ class Camera:
 
     @TraceEnable()
     @RaiseIfOutsideContext()
-    @RuntimeTypeCheckEnable()
+    #@RuntimeTypeCheckEnable()
     def read_memory(self, addr: int, max_bytes: int) -> bytes:  # coverage: skip
         """Read a byte sequence from a given memory address.
 
@@ -444,7 +444,7 @@ class Camera:
 
     @TraceEnable()
     @RaiseIfOutsideContext()
-    @RuntimeTypeCheckEnable()
+    #@RuntimeTypeCheckEnable()
     def write_memory(self, addr: int, data: bytes):  # coverage: skip
         """Write a byte sequence to a given memory address.
 
@@ -462,7 +462,7 @@ class Camera:
 
     @TraceEnable()
     @RaiseIfOutsideContext()
-    @RuntimeTypeCheckEnable()
+    #@RuntimeTypeCheckEnable()
     def read_registers(self, addrs: Tuple[int, ...]) -> Dict[int, int]:  # coverage: skip
         """Read contents of multiple registers.
 
@@ -483,7 +483,7 @@ class Camera:
 
     @TraceEnable()
     @RaiseIfOutsideContext()
-    @RuntimeTypeCheckEnable()
+    #@RuntimeTypeCheckEnable()
     def write_registers(self, addrs_values: Dict[int, int]):  # coverage: skip
         """Write data to multiple registers.
 
@@ -513,7 +513,7 @@ class Camera:
 
     @TraceEnable()
     @RaiseIfOutsideContext()
-    @RuntimeTypeCheckEnable()
+    #@RuntimeTypeCheckEnable()
     def get_features_affected_by(self, feat: FeatureTypes) -> FeaturesTuple:
         """Get all features affected by a specific camera feature.
 
@@ -532,7 +532,7 @@ class Camera:
 
     @TraceEnable()
     @RaiseIfOutsideContext()
-    @RuntimeTypeCheckEnable()
+    #@RuntimeTypeCheckEnable()
     def get_features_selected_by(self, feat: FeatureTypes) -> FeaturesTuple:
         """Get all features selected by a specific camera feature.
 
@@ -550,7 +550,7 @@ class Camera:
         return filter_selected_features(self.__feats, feat)
 
     @RaiseIfOutsideContext()
-    @RuntimeTypeCheckEnable()
+    #@RuntimeTypeCheckEnable()
     def get_features_by_type(self, feat_type: FeatureTypeTypes) -> FeaturesTuple:
         """Get all camera features of a specific feature type.
 
@@ -570,7 +570,7 @@ class Camera:
         return filter_features_by_type(self.__feats, feat_type)
 
     @RaiseIfOutsideContext()
-    @RuntimeTypeCheckEnable()
+    #@RuntimeTypeCheckEnable()
     def get_features_by_category(self, category: str) -> FeaturesTuple:
         """Get all camera features of a specific category.
 
@@ -588,7 +588,7 @@ class Camera:
         return filter_features_by_category(self.__feats, category)
 
     @RaiseIfOutsideContext()
-    @RuntimeTypeCheckEnable()
+    #@RuntimeTypeCheckEnable()
     def get_feature_by_name(self, feat_name: str) -> FeatureTypes:
         """Get a camera feature by its name.
 
@@ -612,7 +612,7 @@ class Camera:
 
     @TraceEnable()
     @RaiseIfOutsideContext()
-    @RuntimeTypeCheckEnable()
+    #@RuntimeTypeCheckEnable()
     def get_frame_generator(self, limit: Optional[int] = None, timeout_ms: int = 2000):
         """Construct frame generator, providing synchronous image acquisition.
 
@@ -644,7 +644,7 @@ class Camera:
 
     @TraceEnable()
     @RaiseIfOutsideContext()
-    @RuntimeTypeCheckEnable()
+    #@RuntimeTypeCheckEnable()
     def get_frame(self, timeout_ms: int = 2000) -> Frame:
         """Get single frame from camera. Synchronous frame acquisition.
 
@@ -664,7 +664,7 @@ class Camera:
 
     @TraceEnable()
     @RaiseIfOutsideContext()
-    @RuntimeTypeCheckEnable()
+    #@RuntimeTypeCheckEnable()
     def start_streaming(self, handler: FrameHandler, buffer_count: int = 5):
         """Enter streaming mode
 
@@ -738,7 +738,7 @@ class Camera:
 
     @TraceEnable()
     @RaiseIfOutsideContext()
-    @RuntimeTypeCheckEnable()
+    #@RuntimeTypeCheckEnable()
     def queue_frame(self, frame: Frame):
         """Reuse acquired frame in streaming mode.
 
@@ -806,7 +806,7 @@ class Camera:
 
     @TraceEnable()
     @RaiseIfOutsideContext()
-    @RuntimeTypeCheckEnable()
+    #@RuntimeTypeCheckEnable()
     def set_pixel_format(self, fmt: PixelFormat):
         """Set current pixel format.
 
@@ -830,7 +830,7 @@ class Camera:
 
     @TraceEnable()
     @RaiseIfOutsideContext()
-    @RuntimeTypeCheckEnable()
+    #@RuntimeTypeCheckEnable()
     def save_settings(self, file: str, persist_type: PersistType):
         """Save camera settings to XML - File
 
@@ -856,7 +856,7 @@ class Camera:
 
     @TraceEnable()
     @RaiseIfOutsideContext()
-    @RuntimeTypeCheckEnable()
+    #@RuntimeTypeCheckEnable()
     def load_settings(self, file: str, persist_type: PersistType):
         """Load camera settings from XML file
 
