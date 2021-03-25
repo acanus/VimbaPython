@@ -1,4 +1,6 @@
-﻿Vimba Python API
+This repos is base on https://github.com/alliedvision/VimbaPython with modification to run with python 3.6 on Jetson devices
+
+Vimba Python API
 ===============
 Vimba Python API is contained in Allied Vision's Vimba Suite as of Vimba 4.0. We provide VimbaPython on GitHub additionally.   
 Vimba runs on Windows, Linux, and ARM and also contains C, C++, and .NET APIs. Vimba contains extensive documentation and examples for each API.
